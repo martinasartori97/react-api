@@ -2,12 +2,12 @@ import { useState } from 'react'
 import './App.css'
 
 
-const articles = [
-  'php',
-  'javascript',
-  'laravel',
-  'react',
-];
+// const articles = [
+//   'php',
+//   'javascript',
+//   'laravel',
+//   'react',
+// ];
 
 
 
