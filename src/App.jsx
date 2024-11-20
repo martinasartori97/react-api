@@ -21,7 +21,7 @@ function App() {
   const [content, setContent] = useState('')
   const [category, setCategory] = useState('');
 
-  const [charactersData, setCharactersData] = useState({})
+  const [postsData, setPostsData] = useState({})
 
 
 
@@ -30,7 +30,7 @@ function App() {
       .then(resp => resp.json())
       .then(data => {
         console.log(data);
-        setCharactersData(data)
+        setPostsData(data)
       })
 
 
