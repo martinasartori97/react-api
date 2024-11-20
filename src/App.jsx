@@ -21,6 +21,8 @@ function App() {
   const [content, setContent] = useState('')
   const [category, setCategory] = useState('');
 
+  const [charactersData, setCharactersData] = useState({})
+
 
 
   function fetchData(url = 'https://localhost:3000/posts') {
