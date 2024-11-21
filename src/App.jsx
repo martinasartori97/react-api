@@ -20,7 +20,6 @@ function App() {
   const [image, setImage] = useState('');
   const [content, setContent] = useState('')
   const [category, setCategory] = useState('');
-
   const [postsData, setPostsData] = useState({})
 
 
