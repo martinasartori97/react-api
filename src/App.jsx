@@ -66,7 +66,7 @@ function App() {
 
 
 
-  function fetchData(url = 'https://localhost:3000/posts') {
+  function fetchData(url = 'http://localhost:3000/posts') {
     fetch(url)
       .then(resp => resp.json())
       .then(data => {
@@ -75,110 +75,112 @@ function App() {
       })
 
 
-    useEffect(fetchData, [])
+
   }
-}
+
+  useEffect(fetchData, [])
 
 
-return (
-  <>
-    <div className="container">
-      <h1> React Blog Form</h1>
-      <p>insert the title</p>
-      <input type="text" title='title' id='title' value={title} onChange={e => setTitle(e.target.value)} />
-      <button onClick={handleButtonOnClick}>send</button>
-
-      <ul className="list-group">
-        {articles.map((article, index) => <li key={index} className="list-group-item">{article}</li>)}
-      </ul>
-
-
-      <div className="form-floating mb-3">
-
-        <input type="text" className="form-control" value={image} onChange={e => setImage(e.target.value)} />
-        <label className="img" htmlFor="floatingInputDisabled">insert the image</label>
-
-      </div>
-
-
-      <div className="form-floating mb-3">
-        <input type="text" className="form-control" value={content} onChange={e => setContent(e.target.value)} />
-        <label htmlFor="floatingInputDisabled">content</label>
-      </div>
-
-
-      <select className="form-select" aria-label="Default select example">
-        <option selected>Open this select menu</option>
-        <option value="1">One</option>
-        <option value="2">Two</option>
-        <option value="3">Three</option>
-      </select>
-
-
-      <div className="form-check">
-        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-        <label className="form-check-label" for="flexCheckDefault">
-          Default checkbox
-        </label>
-      </div>
-      <div className="form-check">
-        <input className="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked />
-        <label className="form-check-label" for="flexCheckChecked">
-          Checked checkbox
-        </label>
-      </div>
-      <div className="form-check">
-        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-        <label className="form-check-label" for="flexCheckDefault">
-          Default checkbox
-        </label>
-      </div>
-      <div className="form-check">
-        <input className="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked />
-        <label className="form-check-label" for="flexCheckChecked">
-          Checked checkbox
-        </label>
-      </div>
-    </div>
-
-
-
-    <section className='posts'>
+  return (
+    <>
       <div className="container">
-        <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3">
+        <h1> React Blog Form</h1>
+        <p>insert the title</p>
+        <input type="text" title='title' id='title' value={title} onChange={e => setTitle(e.target.value)} />
+        <button onClick={handleButtonOnClick}>send</button>
+
+        {/* <ul className="list-group">
+          {articles.map((article, index) => <li key={index} className="list-group-item">{article}</li>)}
+        </ul> */}
 
 
-          {
-            postsData.results ?
+        <div className="form-floating mb-3">
 
-              postsData.results.map(posts => (
+          <input type="text" className="form-control" value={image} onChange={e => setImage(e.target.value)} />
+          <label className="img" htmlFor="floatingInputDisabled">insert the image</label>
 
-                <div className="col" key={post.id}>
-                  <div className="card">
-                    <img src={post.image} alt="" />
-                    <p>
-                      {post.name}
-                    </p>
-                  </div>
-                </div>
-
-              )) :
-
-         
-
-      }
+        </div>
 
 
+        <div className="form-floating mb-3">
+          <input type="text" className="form-control" value={content} onChange={e => setContent(e.target.value)} />
+          <label htmlFor="floatingInputDisabled">content</label>
+        </div>
 
 
+        <select className="form-select" aria-label="Default select example">
+          <option selected>Open this select menu</option>
+          <option value="1">One</option>
+          <option value="2">Two</option>
+          <option value="3">Three</option>
+        </select>
+
+
+        <div className="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+          <label className="form-check-label" for="flexCheckDefault">
+            Default checkbox
+          </label>
+        </div>
+        <div className="form-check">
+          <input className="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked />
+          <label className="form-check-label" for="flexCheckChecked">
+            Checked checkbox
+          </label>
+        </div>
+        <div className="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+          <label className="form-check-label" for="flexCheckDefault">
+            Default checkbox
+          </label>
+        </div>
+        <div className="form-check">
+          <input className="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked />
+          <label className="form-check-label" for="flexCheckChecked">
+            Checked checkbox
+          </label>
         </div>
       </div>
 
-    </section>
 
 
-  </>
-)
+      <section className='posts'>
+        <div className="container">
+          <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3">
+
+
+            {
+              postsData.data ?
+
+                postsData.data.map(post => (
+
+                  <div className="col" key={post.slug}>
+                    <div className="card">
+                      <img src={`http://localhost:3000/imgs/posts/${post.image}`} alt="" />
+                      <p>
+                        {post.title}
+                      </p>
+                    </div>
+                  </div>
+
+                )) :
+                <p>hello</p>
+
+
+
+            }
+
+
+
+
+          </div>
+        </div>
+
+      </section>
+
+
+    </>
+  )
 }
 
 
