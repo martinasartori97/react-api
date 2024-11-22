@@ -6,6 +6,8 @@
 
 h1 {
   padding-bottom: 2rem;
+  padding-left: 7rem;
+  background-color: coral
 }
 
 p {
@@ -33,5 +35,9 @@ p {
 
 .posts {
   background-color: coral;
-  pa
+
+}
+
+.card {
+  margin-bottom: 3rem;
 }
