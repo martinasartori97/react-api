@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import './App.css'
+import AppCards from './components/AppCards'
 
 
 // const articles = [
@@ -143,7 +144,7 @@ function App() {
 
 
       <h1>menù della casa</h1>
-      <section className='posts'>
+      {/* <section className='posts'>
         <div className="container">
           <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3">
 
@@ -175,7 +176,9 @@ function App() {
           </div>
         </div>
 
-      </section>
+      </section> */}
+
+      <AppCards />
 
 
     </>
