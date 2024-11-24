@@ -178,7 +178,7 @@ function App() {
 
       </section>
 
-      {/* <<AppCards postsData={postsData} loading={loading} /> /> */}
+      {/* <AppCards postsData={postsData} loading={loading} />  */}
 
 
     </>
